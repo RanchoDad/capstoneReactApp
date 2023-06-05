@@ -13,6 +13,7 @@ export default function LoginForm({ setUser }) {
     setError('');
   }
 
+  
   async function handleSubmit(evt) {
     // Prevent form from being submitted to the server
     evt.preventDefault();
