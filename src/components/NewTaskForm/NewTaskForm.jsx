@@ -28,7 +28,6 @@ export default function NewTaskForm(){
         }catch(err){
             setError(err)
         }
-        
     }
     return (
         <>
