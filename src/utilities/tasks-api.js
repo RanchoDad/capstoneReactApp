@@ -1,5 +1,5 @@
 import sendRequest from "./send-request";
-const BASE_URL = '/api/tasks';
+const BASE_URL = '/api/usertasks';
 
 export async function tasksIndexRequest(){
     return sendRequest(BASE_URL);

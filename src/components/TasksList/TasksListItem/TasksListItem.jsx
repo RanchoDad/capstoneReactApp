@@ -11,8 +11,7 @@ export default function TasksListItem({task}){
             </Link>
         </p>
         <p>Description: {task.description}</p>
-        <p>Purpose: {task.purpose}</p>
-        <p>Due Date: {task.finish_by}</p>
+        <p>Due Date: {task.finishBy}</p>
         <p>Completed?: {task.completed}</p>
         {/* must make the above a boolean checkbox that changes background color and 
         does a calculation of how long it took to complete, what percentage of time 
