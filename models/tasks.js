@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const taskSchema = new Schema({
     title: {type: String, required: true},
     description: {type: String},
-    finishBy: {type: Date},
+    dueDate: {type: Date},
     completed: { type: Boolean},
     uploaded_by: {type: Schema.Types.ObjectId, ref: 'User'}
 }, {

@@ -10,18 +10,21 @@ export default function TasksIndexPage(){
         console.log('loading...')
         async function getTasks(){
             const tasks = await tasksIndexRequest();
-            setTasks(tasks)
+            const sortedTasks = tasks.sort((a, b) => {
+                // Sort tasks in descending order based on createdAt
+                return new Date(b.createdAt) - new Date(a.createdAt);
+            });
+            setTasks(sortedTasks)
         }
         getTasks();
     }, [])
     return(
         <>
-        <h1>Here are the glittering tasks of Hollywood</h1>
-        <TasksList tasks={tasks}></TasksList>
+        <h1>Here is your list of tasks, newest at the top</h1>
         <Link to="/newtasks">  
         <h1>Create your own tasks</h1>
         </Link>
-            
+        <TasksList tasks={tasks}></TasksList>
         </>
     )
 }

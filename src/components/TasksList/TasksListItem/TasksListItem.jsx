@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+
 
 export default function TasksListItem({task}){
     return(
@@ -11,8 +12,8 @@ export default function TasksListItem({task}){
             </Link>
         </p>
         <p>Description: {task.description}</p>
-        <p>Due Date: {task.finishBy}</p>
-        <p>Completed?: {task.completed}</p>
+        <p>Due Date: {task.dueDate};</p>
+        <p>Completed: {task.completed}</p>
         {/* must make the above a boolean checkbox that changes background color and 
         does a calculation of how long it took to complete, what percentage of time 
         from creation to due date was used to complete it and have that compiled into
