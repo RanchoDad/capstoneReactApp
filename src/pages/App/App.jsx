@@ -7,8 +7,10 @@ import HomePage from '../HomePage/HomePage';
 import UserTaskHistoryPage from '../UserTaskHistoryPage/UserTaskHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 import NewTaskPage from '../NewTaskPage/NewTaskPage';
+import TaskDetailPage from '../TaskDetailPage/TaskDetailPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
+
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -23,6 +25,7 @@ export default function App() {
               <Route path="/tasks" element={<UserTaskHistoryPage />} />
               <Route path="/" element={<HomePage />}/>
               <Route path="/newtasks" element={<NewTaskPage/>} />
+              <Route path="/tasks/:taskId" element={<TaskDetailPage/>}/>
             </Routes>
           </>
           :

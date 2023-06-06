@@ -1,7 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { getTaskRequest } from "../../utilities/tasks-api";
+import { getTaskRequest, deleteTaskRequest } from "../../utilities/tasks-api";
 import { useEffect, useState } from 'react';
 import TaskDetail from "../../components/TaskDetail/TaskDetail";
+
 export default function TaskDetailPage(){
     let { taskId } = useParams();
     const [task, setTask] = useState({})
@@ -11,6 +12,7 @@ export default function TaskDetailPage(){
     useEffect(()=>{
         async function getTask(){
             const task = await getTaskRequest(taskId);
+            console.log(task)
             if(task){
                 setTask(task)
                 setTimeout(()=>{

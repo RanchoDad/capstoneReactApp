@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 export default function TasksListItem({task}){
     return(
         <>
-        <p>
+        
+            {task && <p>
             <Link to={`/tasks/${task._id}`}>
                 {/* there will be a card here indicating all the details of the individual task selected, including
                 an edit button, delete button etc */}
                 {task.title}
             </Link>
-        </p>
+        </p>}
         <p>Description: {task.description}</p>
         <p>Due Date: {task.dueDate};</p>
         <p>Completed: {task.completed}</p>

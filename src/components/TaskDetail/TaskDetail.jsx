@@ -1,6 +1,9 @@
 import { useState} from 'react'
-// import EditMovieForm from './EditMovieForm/EditMovieForm'
-export default function TaskDetail({task, handleDelete, setTask}){
+import EditTaskForm from './EditTaskForm/EditTaskForm'
+export default function TaskDetail({task
+    , handleDelete
+    , setTask
+}){
     const [editFormIsOpen, setEditFormIsOpen] = useState(false)
     function toggleEditForm(){
         setEditFormIsOpen((prevState) => {
@@ -10,19 +13,21 @@ export default function TaskDetail({task, handleDelete, setTask}){
     }
     return (
         <>
-            {/* <div>
-                <h3>{movie.title}</h3>
-                <p>Released: {movie.releaseYear}</p>
-                <p>Rated: {movie.rating}</p>
-                { movie.nowShowing && <p>Now Showing</p>}
-                <button onClick={handleDelete}>DELETE {movie.title}</button>
+        <h1>This is the detail page</h1>
+        <br />
+            <div>
+                <h3>{task.title}</h3>
+                <p>Description : {task.description}</p>
+                <p>Due Date: {task.dueDate}</p>
+                
+                <button onClick={handleDelete}>DELETE this task </button>
                 <button onClick={toggleEditForm}>
                     {editFormIsOpen ? "Close Editor" : "Edit"}
                 </button>
                 { editFormIsOpen && 
-                    <EditMovieForm movie={movie} setMovie={setMovie} setEditFormIsOpen={setEditFormIsOpen}></EditMovieForm>
+                    <EditTaskForm task={task} setTask={setTask} setEditFormIsOpen={setEditFormIsOpen}></EditTaskForm>
                 }
-            </div> */}
+            </div>
         </>
     )
 }

@@ -32,6 +32,7 @@ async function create(req, res){
 async function detail(req, res){
     try{
         const task = await Task.findById(req.params.id)
+        console.log(task)
         res.status(200).json(task)
     }catch(err){
         console.log(err)

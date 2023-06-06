@@ -9,12 +9,12 @@ export default function TasksIndexPage(){
     useEffect(()=>{
         console.log('loading...')
         async function getTasks(){
-            const tasks = await tasksIndexRequest();
-            const sortedTasks = tasks.sort((a, b) => {
+            const sortTasks = await tasksIndexRequest();
+            const tasks = sortTasks.sort((a, b) => {
                 // Sort tasks in descending order based on createdAt
                 return new Date(b.createdAt) - new Date(a.createdAt);
             });
-            setTasks(sortedTasks)
+            setTasks(tasks)
         }
         getTasks();
     }, [])
