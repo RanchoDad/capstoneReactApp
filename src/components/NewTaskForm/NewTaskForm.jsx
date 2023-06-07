@@ -1,34 +1,28 @@
 import React, { useRef, useState } from 'react';
 import { createTaskRequest } from '../../utilities/tasks-api';
 import { useNavigate } from 'react-router-dom';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { format } from 'date-fns';
-
-
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 export default function NewTaskForm(){
     const navigate = useNavigate();
     const titleRef = useRef('')
     const descriptionRef = useRef('')
-    const [finishByDate, setFinishByDate] = useState(null); 
-    const completedRef = useRef('')
+    const [date, setDate] = useState(null);
     const [error, setError] = useState('')
+    
     
     async function handleSubmit(e){
         e.preventDefault()
         setError('')
-      
         const newTask = {
             title: titleRef.current.value,
             description: descriptionRef.current.value,
-            dueDate: finishByDate,
-            completed: completedRef.current.checked
+            dueDate: date
         }
 
         try{
             const newTaskResponse = await createTaskRequest(newTask)
-            console.log(newTaskResponse)
             navigate('/tasks')
         }catch(err){
             setError(err)
@@ -46,16 +40,14 @@ export default function NewTaskForm(){
                 <input type="text" id="description" ref={descriptionRef}/>
 
                 <label htmlFor="dueDate">Due Date</label>
-                { <DatePicker 
-                selected= {finishByDate}  
-                onChange={(date) => setFinishByDate(date)} 
-                id="dueDate"
-                showTimeSelect 
-                timeIntervals={30}
-                timeCaption="Time" 
-                /> }
-                <label htmlFor="completed">Has this been completed?</label>
-                <input type="checkbox" id="completed" ref={completedRef}/>
+                <DatePicker 
+                    placeholderText='When is the due date?'
+                    minDate={new Date()}
+                    showTimeSelect
+                    timeIntervals={30}
+                    selected={date} 
+                    onChange={(date) => setDate(date)}
+                    />
                 <button>Add the Task</button>
             </form>
         </>

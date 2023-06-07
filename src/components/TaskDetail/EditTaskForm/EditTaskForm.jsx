@@ -7,18 +7,18 @@ import { format } from 'date-fns';
 
 export default function EditTaskForm({task, setTask, setEditFormIsOpen}){
     const navigate = useNavigate();
-    const titleRef = useRef('')
-    const descriptionRef = useRef('')
-    const [finishByDate, setFinishByDate] = useState(null); 
-    const completedRef = useRef('')
+    const titleRef = useRef(task.title)
+    const descriptionRef = useRef(task.description)
+    const dueDateRef = useRef(task.dueDate); 
     const [error, setError] = useState('')
+    
+ 
     async function handleSubmit(e){
         e.preventDefault()
         const updatedTask = {
             title: titleRef.current.value,
             description: descriptionRef.current.value,
-            dueDate: finishByDate,
-            completed: completedRef.current.checked
+            dueDate: dueDateRef.current.value,
         }
         try{
             const newTask = await updateTaskRequest(task._id, updatedTask)
@@ -32,6 +32,7 @@ export default function EditTaskForm({task, setTask, setEditFormIsOpen}){
         <>
         <h3>Edit Below</h3>
         { error && <p>{JSON.stringify(error)}</p>}
+        <div className="itemStyle">
         <form className="form-container" onSubmit={handleSubmit}>
                 <label htmlFor="title">Title</label>
                 <input type="text" id="title" ref={titleRef} />
@@ -40,18 +41,10 @@ export default function EditTaskForm({task, setTask, setEditFormIsOpen}){
                 <input type="text" id="description" ref={descriptionRef}/>
 
                 <label htmlFor="dueDate">Due Date</label>
-                { <DatePicker 
-                selected= {finishByDate}  
-                onChange={(date) => setFinishByDate(date)} 
-                id="dueDate"
-                showTimeSelect 
-                timeIntervals={30}
-                timeCaption="Time" 
-                /> }
-                <label htmlFor="completed">Has this been completed?</label>
-                <input type="checkbox" id="completed" ref={completedRef}/>
+                <input type="date" ref={dueDateRef}/>
                 <button>Edit Your Task</button>
             </form>
+            </div>
             </>
     )
 }
