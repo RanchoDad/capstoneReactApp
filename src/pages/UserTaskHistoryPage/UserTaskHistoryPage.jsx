@@ -2,6 +2,7 @@ import { tasksIndexRequest } from '../../utilities/tasks-api';
 import { useEffect, useState } from 'react'
 import TasksList from '../../components/TasksList/TasksList';
 import { Link } from "react-router-dom";
+import FormatDate from '../../components/FormatDate/FormatDate';
 
 
 export default function TasksIndexPage(){

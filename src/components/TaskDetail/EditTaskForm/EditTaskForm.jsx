@@ -32,7 +32,7 @@ export default function EditTaskForm({task, setTask, setEditFormIsOpen}){
         <>
         <h3>Edit Below</h3>
         { error && <p>{JSON.stringify(error)}</p>}
-        <div className="itemStyle">
+        <div>
         <form className="form-container" onSubmit={handleSubmit}>
                 <label htmlFor="title">Title</label>
                 <input type="text" id="title" ref={titleRef} />

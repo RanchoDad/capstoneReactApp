@@ -26,11 +26,22 @@ export function getToken() {
   }
   return token;
 }
-
+// getthe user and the user._id for user-only index page
 export function getUser() {
   const token = getToken();
-  return token ? JSON.parse(atob(token.split('.')[1])).user : null;
+  if (token) {
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return {
+      user: payload.user,
+      userID: payload.user._id
+    };
+  }
+  return null;
 }
+// export function getUser() {
+//   const token = getToken();
+//   return token ? JSON.parse(atob(token.split('.')[1])).user : null;
+// }
 
 export function checkToken() {
   return usersAPI.checkToken()

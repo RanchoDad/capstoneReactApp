@@ -1,5 +1,6 @@
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import './AuthPage.css'
 
 export default function AuthPage({ setUser }) {
   return (
@@ -8,14 +9,14 @@ export default function AuthPage({ setUser }) {
       <br />
       <div className="container">
         <div className="row">
-          <div className="col md-4">
+          <div className="col-sm">
             <SignUpForm setUser={setUser}  />
           </div>
         </div>
       </div>              
       <div className="container">
         <div className="row">
-          <div className="col md-4">
+          <div className="col-sm">
           <LoginForm setUser={setUser} />
           </div>
         </div>

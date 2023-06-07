@@ -1,5 +1,7 @@
 import { useState} from 'react'
 import EditTaskForm from './EditTaskForm/EditTaskForm'
+import FormatDate from '../FormatDate/FormatDate';
+
 export default function TaskDetail({task
     , handleDelete
     , setTask
@@ -19,8 +21,9 @@ export default function TaskDetail({task
                 <div className="card-body">
                 <h3>{task.title}</h3>
                 <p>Description : {task.description}</p>
-                <p>Due Date: {task.dueDate}</p>
-                
+                <div>Due Date:
+                    <FormatDate tasks={[task]} />
+                </div>    
                 <button onClick={handleDelete}>DELETE this task </button>
                 <button onClick={toggleEditForm}>
                     {editFormIsOpen ? "Close Editor" : "Edit"}
