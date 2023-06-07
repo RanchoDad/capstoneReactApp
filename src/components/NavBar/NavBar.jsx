@@ -9,11 +9,12 @@ export default function NavBar({ setUser }) {
   }
 
   return (
-    <nav>
+    <nav className="nav-style">
       <Link to="/tasks">{user && user.name}'s List</Link>
       &nbsp; | &nbsp;
+      <Link to="/">Home</Link>
+      &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>Log Out</Link>
-      <hr />
     </nav>
   );
 }

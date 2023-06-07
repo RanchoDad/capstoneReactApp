@@ -1,3 +1,25 @@
 body {
     background: linear-gradient(120deg, #e8c4ce, #aed9e0);
 }
+
+.form-container-color {
+    background: gray
+    /* linear-gradient(to top, #e8c4ce, #aed9e0) */
+    ;
+    box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.4);
+
+}
+.title-page {
+    color: black;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: fit-content;
+    border-radius: 10% ;
+    box-shadow: 6px 6px 3px rgba(165, 62, 205, 0.4);
+}
+.title-page:hover { 
+    box-shadow: 16px 16px 16px 32px rgba(165, 62, 205, 0.4);
+    background: linear-gradient(120deg,#aed9e0, #e8c4ce);
+}
