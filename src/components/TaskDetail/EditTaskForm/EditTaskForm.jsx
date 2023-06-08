@@ -49,7 +49,7 @@ export default function EditTaskForm({task, setTask, setEditFormIsOpen}){
                     selected={date} 
                     onChange={(date) => setDate(date)}
                     />                
-                    <button>Edit Your Task</button>
+                    <button className="btn btn-info btn-styles">Edit Your Task</button>
             </form>
             </div>
             </>

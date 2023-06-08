@@ -4,7 +4,7 @@ import './NewTaskPage.css'
 export default function NewTaskPage() {
   return (
     <>
-      <h1>NewTaskPage</h1>
+      <h1>Set up your next task</h1>
       <NewTaskForm />
     </>
   );
