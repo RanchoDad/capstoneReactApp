@@ -32,7 +32,11 @@ export default function NewTaskForm(){
     return (
         <>
             { error && <p>{JSON.stringify(error)}</p>}
-            <form className="form-container" onSubmit={handleSubmit}>
+
+            <div class="container">
+            <div class="row">
+            <div className='col-lg-4 offset-lg-4'>
+            <form className="form-container form-container-color" onSubmit={handleSubmit}>
                 <label htmlFor="title">Title</label>
                 <input type="text" id="title" ref={titleRef} />
 
@@ -48,8 +52,11 @@ export default function NewTaskForm(){
                     selected={date} 
                     onChange={(date) => setDate(date)}
                     />
-                <button>Add the Task</button>
+                <button className="btn btn-info btn-style">Add the Task</button>
             </form>
+            </div>
+            </div>
+            </div>
         </>
 
     )

@@ -2,7 +2,6 @@ import { tasksIndexRequest } from '../../utilities/tasks-api';
 import { useEffect, useState } from 'react'
 import TasksList from '../../components/TasksList/TasksList';
 import { Link } from "react-router-dom";
-import FormatDate from '../../components/FormatDate/FormatDate';
 
 
 export default function TasksIndexPage(){
@@ -21,11 +20,23 @@ export default function TasksIndexPage(){
     }, [])
     return(
         <>
-        <h1>Here is your list of tasks, newest at the top</h1>
-        <Link to="/newtasks">  
-        <h1>Create your own tasks</h1>
+        <div class="container">
+        <div class="row">
+        <div className='col-lg-4'>
+        
+        <Link to="/newtasks" className="create-style">
+            <div className="bounce">  
+        <h1>Make more tasks</h1>
+            </div>
         </Link>
         <TasksList tasks={tasks}></TasksList>
+        </div>
+            <div className='col-lg-8'>
+        <h1 className="index-style ">Get organized and stay productive with this task management app</h1>
+        </div>
+        
+        </div>
+        </div>
         </>
     )
 }

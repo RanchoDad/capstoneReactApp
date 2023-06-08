@@ -1,6 +1,8 @@
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import './AuthPage.css'
+import createtaskImage from '../../img/createtask.png';
+
 
 export default function AuthPage({ setUser }) {
   return (
@@ -17,10 +19,10 @@ export default function AuthPage({ setUser }) {
               <SignUpForm setUser={setUser}  />
             </div>
           </div>
-          <div className="col-sm-6 text-end">
-            <div className="additional-element">
-                this should be on the right side
-            </div>
+          <div className="col-sm-6">
+            <div >
+            <img src={createtaskImage} alt="Image Description" className="additional-element" />
+          </div>
           </div>   
         </div>  
       </div>  
