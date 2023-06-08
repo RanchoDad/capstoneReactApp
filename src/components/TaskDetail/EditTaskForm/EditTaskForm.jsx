@@ -12,6 +12,7 @@ export default function EditTaskForm({task, setTask, setEditFormIsOpen}){
     const [error, setError] = useState('');
     const [date, setDate] = useState('');
  
+    
     async function handleSubmit(e){
         e.preventDefault()
         const updatedTask = {
