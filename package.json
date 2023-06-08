@@ -1,6 +1,9 @@
 {
   "name": "taskApp",
   "version": "0.1.0",
+  "engines": {
+    "node": "18.x"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -34,7 +37,7 @@
       "react-app/jest"
     ]
   },
-  
+
   "browserslist": {
     "production": [
       ">0.2%",
@@ -46,6 +49,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://localhost:3001"
+  }
 }

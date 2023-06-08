@@ -23,6 +23,7 @@ export default function NewTaskForm(){
 
         try{
             const newTaskResponse = await createTaskRequest(newTask)
+            console.log(newTaskResponse)
             navigate('/tasks')
         }catch(err){
             setError(err)

@@ -24,7 +24,7 @@ export default function TaskDetailPage(){
             }
         }
         getTask()
-    }, [])
+    } )
 
     async function handleDelete(e){
         const deleteResponse = await deleteTaskRequest(task._id);
