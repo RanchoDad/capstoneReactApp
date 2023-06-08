@@ -21,7 +21,7 @@ export default function AuthPage({ setUser }) {
           </div>
           <div className="col-sm-6">
             <div >
-            <img src={createtaskImage} alt="Image Description" className="additional-element" />
+            <img src={createtaskImage} alt="ImageDescription" className="additional-element" />
           </div>
           </div>   
         </div>  
