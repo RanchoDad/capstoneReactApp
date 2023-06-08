@@ -3,14 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import { updateTaskRequest } from '../../../utilities/tasks-api';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { format } from 'date-fns';
 
 export default function EditTaskForm({task, setTask, setEditFormIsOpen}){
     const navigate = useNavigate();
     const titleRef = useRef(task.title)
     const descriptionRef = useRef(task.description)
     const dueDateRef = useRef(task.dueDate); 
-    const [error, setError] = useState('')
+    const [error, setError] = useState('');
+    const [date, setDate] = useState('');
     
  
     async function handleSubmit(e){
@@ -41,8 +41,15 @@ export default function EditTaskForm({task, setTask, setEditFormIsOpen}){
                 <input type="text" id="description" ref={descriptionRef}/>
 
                 <label htmlFor="dueDate">Due Date</label>
-                <input type="date" ref={dueDateRef}/>
-                <button>Edit Your Task</button>
+                <DatePicker 
+                    placeholderText='When is the due date?'
+                    minDate={new Date()}
+                    showTimeSelect
+                    timeIntervals={30}
+                    selected={date} 
+                    onChange={(date) => setDate(date)}
+                    />                
+                    <button>Edit Your Task</button>
             </form>
             </div>
             </>

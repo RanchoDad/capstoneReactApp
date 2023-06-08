@@ -181,3 +181,39 @@ button[type="submit"] {
 .text-left {
   text-align: left;
 }
+.card-style {
+  background-color: pink;
+  margin: 2vmin;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease; /* Add a transition for smooth shadow effect */
+}
+
+.card-style:hover {
+  cursor: pointer;
+  animation: bounce 0.5s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add an elevated shadow effect on hover */
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card-style .card-body {
+  text-align: left;
+  padding: 0.9vmin;
+  text-decoration: none;
+}
+
+.card-style .card-body p {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
