@@ -35,7 +35,7 @@ export default function TaskDetailPage(){
     return (
         <>
         <h1>Your Task</h1>
-        { loading ? <p>Loading....</p>
+        { loading ? <p className="load-spin">Loading....</p>
         :
         error ? <p>{error}</p> 
         :

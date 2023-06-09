@@ -7,7 +7,7 @@ import HomePage from '../HomePage/HomePage';
 import UserTaskHistoryPage from '../UserTaskHistoryPage/UserTaskHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 import NewTaskPage from '../NewTaskPage/NewTaskPage';
-import TaskDetailPage from '../TaskDetailPage/TaskDetailPage';
+import TaskDetailPage from '../TaskDetailPage/TaskDetailpage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.css';
 
