@@ -26,7 +26,7 @@ export default function TasksIndexPage(){
         
         <Link to="/newtasks" className="create-style">
             <div className="bounce">  
-        <h1>Make more tasks</h1>
+        <h1>Add Tasks Here</h1>
             </div>
         </Link>
         <TasksList tasks={tasks}></TasksList>

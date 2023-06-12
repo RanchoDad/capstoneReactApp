@@ -18,7 +18,7 @@ export default function EditTaskForm({task, setTask, setEditFormIsOpen}){
         const updatedTask = {
             title: titleRef.current.value,
             description: descriptionRef.current.value,
-            dueDate: dueDateRef.current.value,
+            dueDate: date
         }
         try{
             const newTask = await updateTaskRequest(task._id, updatedTask)
@@ -35,10 +35,10 @@ export default function EditTaskForm({task, setTask, setEditFormIsOpen}){
         <div>
         <form className="form-container" onSubmit={handleSubmit}>
                 <label htmlFor="title">Title</label>
-                <input type="text" id="title" ref={titleRef} />
+                <input type="text" id="title" defaultValue={task.title} ref={titleRef} />
 
                 <label htmlFor="description">Description</label>
-                <input type="text" id="description" ref={descriptionRef}/>
+                <input type="text" id="description" defaultValue={task.description} ref={descriptionRef}/>
 
                 <label htmlFor="dueDate">Due Date</label>
                 <DatePicker 

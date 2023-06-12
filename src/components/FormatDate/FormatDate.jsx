@@ -10,7 +10,7 @@ export default function FormatDate ({tasks}){
         const hours = date.getHours();
         const minutes = date.getMinutes();
         const ampm = hours >= 12 ? 'pm' : 'am';
-        const formattedDueDate = `${month} ${day}, ${year} ${hours % 12}:${minutes.toString().padStart(2, '0')}${ampm}`;
+        const formattedDueDate = `${month} ${day}, ${year} ${hours}:${minutes.toString().padStart(2, '0')}${ampm}`;
         console.log(formattedDueDate); 
         return formattedDueDate
   };
