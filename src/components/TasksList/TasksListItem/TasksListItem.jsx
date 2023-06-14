@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import { useState  } from 'react';
 import { updateTaskRequest } from '../../../utilities/tasks-api';
 
-export default function TasksListItem({ task, setTask }) {
+export default function TasksListItem({ task, setTask, complete, onStateChange }) {
   const [error, setError] = useState('');
   const [completeTheTask, setCompleteTheTask] = useState(task.completed);
   async function handleComplete (e){
     e.preventDefault()
+    onStateChange();
     const completeTask = {
       completed: true
     }

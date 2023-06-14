@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 
 export default function TasksIndexPage(){
+    const [complete, setComplete] = useState(false);
     const [tasks, setTasks] = useState([])
     useEffect(()=>{
         console.log('loading...')
@@ -18,6 +19,10 @@ export default function TasksIndexPage(){
         }
         getTasks();
     }, [])
+    const handleComplete = () => {
+        setComplete(!complete);
+        
+    };
     return(
         <>
         <div class="container">
@@ -29,7 +34,7 @@ export default function TasksIndexPage(){
         <h1>Add Tasks Here</h1>
             </div>
         </Link>
-        <TasksList tasks={tasks}></TasksList>
+        <TasksList tasks={tasks} onStateChange={handleComplete} complete={complete}></TasksList>
         </div>
             <div className='col-lg-8'>
         <h1 className="index-style ">Get organized and stay productive with this task management app</h1>

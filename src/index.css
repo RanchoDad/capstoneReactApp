@@ -35,6 +35,9 @@ body {
 .align-rt {
   text-align: right;
 }
+.align-lt {
+  text-align: left;
+}
 
 .smaller {
   font-size: smaller;
@@ -320,4 +323,7 @@ button[type="submit"] {
   } to { 
       transform: rotate(360deg); 
   }
+}
+.text-shadow{
+  text-shadow: 4px 4px 2px rgba(165, 62, 205, 0.3);
 }
