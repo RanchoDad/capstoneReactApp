@@ -11,14 +11,14 @@ body {
 
 .btn-style {
     display: inline-block;
-    animation: bounce 0.5s ease;
+    /* animation: bounce 0.5s ease;
     animation-duration: 2s;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
     background-color: #e8c4ce;
     border: none;
 }
-
+/* 
 @keyframes bounce {
     0% {
       transform: translateY(0);
@@ -29,7 +29,7 @@ body {
     100% {
       transform: translateY(0);
     }
-  }
+  } */
 
   .btn-style:hover {
     animation: none ;

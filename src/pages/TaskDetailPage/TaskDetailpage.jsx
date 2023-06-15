@@ -39,6 +39,7 @@ export default function TaskDetailPage(){
         try{
           const newTask = await updateTaskRequest(task._id, completeTask)
           setTask(newTask);
+          navigate('/tasks')
         }catch(err){
           setError("Try Again")
         }

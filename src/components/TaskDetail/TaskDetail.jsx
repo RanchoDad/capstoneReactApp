@@ -15,25 +15,24 @@ export default function TaskDetail({task
     }
     return (
         <>
-        
         <br />
 <div className="container">
     <div className="row">
         <div className="col-lg-6">
             <div className="card card-style">
                 <div className="card-body">
-                <h3>{task.title}</h3>
-                <p>Description : {task.description}</p>
+                  <h4>{task.title}</h4>
+                    <p>Description : {task.description}</p>
                 <div>
                     <FormatDate tasks={[task]} />
                 </div>   
-                {task.completed ? (
-                  <p>TASK COMPLETED</p>
-                ) : (
+                   {task.completed ? (
+                     <p>TASK COMPLETED</p>
+                    ) : (
                     <>
-                  <button onClick={handleComplete} className="btn btn-info btn-styles">
-                    Click to Complete
-                  </button>
+                      <button onClick={handleComplete} className="btn btn-info btn-styles">
+                         Click to Complete
+                      </button>
 
                     <button
                       onClick={handleDelete}

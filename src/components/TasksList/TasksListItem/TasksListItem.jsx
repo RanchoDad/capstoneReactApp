@@ -2,30 +2,22 @@ import FormatDate from '../../FormatDate/FormatDate';
 import { Link } from 'react-router-dom';
 
 
-export default function TasksListItem({ task, setTask  }) {
+export default function TasksListItem({ task  }) {
 
   return (
     <div className="container">
       <div className="row">
-        {/* <div className="col-md-6"> */}
-              <div className="card card-style">
-           
+              <div className="card card-style cursor-hover">
                 {task && (
                 <Link to={`/tasks/${task._id}`} className="card-link remove-line">
-                <div className="card-body ">
-                  <p>{task.title}</p>
+                <div className="card-body">
+                  <h4>{task.title}</h4>
                   <p>Description: {task.description}</p>
-                  <FormatDate tasks={[task]} />
-                  {/* {completeTheTask ? (
-                    <p>The Task is Complete!</p>
-                  ) : ( */}
-                  
-                {/* )} */}
+                  <FormatDate tasks={[task]} />               
                 </div>
                 </Link>
                 )}
           </div>
-        {/* </div> */}
       </div>
     </div>
   );
