@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+
 export default function HomePage() {
     return(
         <>
@@ -19,7 +19,7 @@ export default function HomePage() {
                         <h5>3. Total tasks remaining</h5>
                         <h5>4. Separated into columns, with descriptive graphics.</h5>
                     <br />
-                    <h6>TaskApp is a MERN stack CRUD application created by <a href="http://www.joshgarber.dev" target="_blank">Josh Garber </a>
+                    <h6>TaskApp is a MERN stack CRUD application created by <a href="http://www.joshgarber.dev" target="_blank" rel="noreferrer">Josh Garber </a>
                         during the General Assembly Software Engingeering Immersive program.</h6>
                 </div>
        

@@ -1,11 +1,11 @@
 import TasksListItem from "./TasksListItem/TasksListItem"
 import { getUser } from "../../utilities/users-service";
 
-export default function TasksList({tasks, handleComplete, complete }){
+export default function TasksList({tasks, complete }){
     const { userID } = getUser();
     const userTasks = tasks.filter(task => task.uploaded_by === userID);   
 
-    const tasksComponents = userTasks.map(task => <TasksListItem key={task._id} task={task} onStateChange={handleComplete} complete={complete}></TasksListItem>)
+    const tasksComponents = userTasks.map(task => <TasksListItem key={task._id} task={task}></TasksListItem>)
     return (
         <>
             {tasksComponents}

@@ -18,7 +18,8 @@ export default function NewTaskForm(){
         const newTask = {
             title: titleRef.current.value,
             description: descriptionRef.current.value,
-            dueDate: date
+            dueDate: date,
+            completed: false
         }
 
         try{

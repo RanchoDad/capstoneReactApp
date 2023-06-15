@@ -6,8 +6,10 @@ import FormatDate from '../FormatDate/FormatDate';
 export default function TaskDetail({task
     , handleDelete
     , setTask
+    , handleComplete
 }){
     const [editFormIsOpen, setEditFormIsOpen] = useState(false)
+    
     function toggleEditForm(){
         setEditFormIsOpen((prevState) => !prevState);
     }
@@ -24,18 +26,41 @@ export default function TaskDetail({task
                 <p>Description : {task.description}</p>
                 <div>
                     <FormatDate tasks={[task]} />
-                </div>    
-                <button onClick={handleDelete} className="btn btn-info btn-styles">DELETE this task </button>
-                <button onClick={toggleEditForm} className="btn btn-info btn-styles">
-                    {editFormIsOpen ? "Close Editor" : "Edit"}
-                </button>
-                { editFormIsOpen && 
-                    <EditTaskForm 
-                        task={task} 
-                        setTask={setTask} 
-                        setEditFormIsOpen={setEditFormIsOpen}/>    
-                }
-                </div>
+                </div>   
+                {task.completed ? (
+                  <p>TASK COMPLETED</p>
+                ) : (
+                    <>
+                  <button onClick={handleComplete} className="btn btn-info btn-styles">
+                    Click to Complete
+                  </button>
+
+                    <button
+                      onClick={handleDelete}
+                      className="btn btn-info btn-styles"
+                      style={{ display: task.completed ? 'none' : 'inline-block' }}
+                    >
+                      Delete this task
+                    </button>
+
+                    <button
+                      onClick={toggleEditForm}
+                      className="btn btn-info btn-styles"
+                      style={{ display: task.completed ? 'none' : 'inline-block' }}
+                    >
+                      {editFormIsOpen ? 'Close Editor' : 'Edit'}
+                    </button>
+
+                    {editFormIsOpen && (
+                      <EditTaskForm
+                        task={task}
+                        setTask={setTask}
+                        setEditFormIsOpen={setEditFormIsOpen}
+                      />
+                    )}
+                  </>
+                )}
+              </div>
             </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { getTaskRequest, deleteTaskRequest } from "../../utilities/tasks-api";
+import { getTaskRequest, deleteTaskRequest, updateTaskRequest } from "../../utilities/tasks-api";
 import { useEffect, useState } from 'react';
 import TaskDetail from "../../components/TaskDetail/TaskDetail";
 
@@ -24,7 +24,7 @@ export default function TaskDetailPage(){
             }
         }
         getTask()
-    } )
+    }, [] )
 
     async function handleDelete(e){
         const deleteResponse = await deleteTaskRequest(task._id);
@@ -32,6 +32,17 @@ export default function TaskDetailPage(){
             navigate('/tasks')
         }
     }
+    async function handleComplete (e){
+        const completeTask = {
+          completed: true
+        }
+        try{
+          const newTask = await updateTaskRequest(task._id, completeTask)
+          setTask(newTask);
+        }catch(err){
+          setError("Try Again")
+        }
+      }
     return (
         <>
         <h1>Your Task</h1>
@@ -41,7 +52,8 @@ export default function TaskDetailPage(){
         :
         <TaskDetail task={task} 
         handleDelete={handleDelete} 
-        setTask={setTask}>
+        setTask={setTask}
+        handleComplete={handleComplete}>
 
         </TaskDetail>
         }
