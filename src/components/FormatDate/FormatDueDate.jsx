@@ -1,7 +1,7 @@
 import { parseISO } from 'date-fns';
 
 
-export default function FormatDate ({tasks}){
+export default function FormatDueDate ({tasks}){
     const handleFormatDate = (task) =>{
         const date = parseISO(task.dueDate);
         const month = date.toLocaleString('default', { month: 'short' });

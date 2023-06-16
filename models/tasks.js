@@ -6,7 +6,9 @@ const taskSchema = new Schema({
     description: {type: String},
     dueDate: {type: Date},
     completed: { type: Boolean},
-    uploaded_by: {type: Schema.Types.ObjectId, ref: 'User'}
+    uploaded_by: {type: Schema.Types.ObjectId, ref: 'User'},
+    createDate: {type: Date},
+    completeDate: {type: Date}
 }, {
     timestamps: true,
 });

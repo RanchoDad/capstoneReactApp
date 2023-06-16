@@ -1,7 +1,6 @@
 import { useState} from 'react'
 import EditTaskForm from './EditTaskForm/EditTaskForm'
-import FormatDate from '../FormatDate/FormatDate';
-
+import FormatDueDate from '../FormatDate/FormatDueDate';
 
 export default function TaskDetail({task
     , handleDelete
@@ -24,7 +23,7 @@ export default function TaskDetail({task
                   <h4>{task.title}</h4>
                     <p>Description : {task.description}</p>
                 <div>
-                    <FormatDate tasks={[task]} />
+                    <FormatDueDate tasks={[task]} />
                 </div>   
                    {task.completed ? (
                      <p>TASK COMPLETED</p>

@@ -19,7 +19,8 @@ export default function NewTaskForm(){
             title: titleRef.current.value,
             description: descriptionRef.current.value,
             dueDate: date,
-            completed: false
+            completed: false,
+            createDate: new Date()
         }
 
         try{
@@ -35,8 +36,8 @@ export default function NewTaskForm(){
         <>
             { error && <p>{JSON.stringify(error)}</p>}
 
-            <div class="container">
-            <div class="row">
+            <div className="container">
+            <div className="row">
             <div className='col-lg-4 offset-lg-4'>
             <form className="form-container form-container-color" onSubmit={handleSubmit}>
                 <label htmlFor="title">Title</label>

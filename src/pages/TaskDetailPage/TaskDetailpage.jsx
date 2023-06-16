@@ -34,7 +34,8 @@ export default function TaskDetailPage(){
     }
     async function handleComplete (e){
         const completeTask = {
-          completed: true
+          completed: true,
+          completeDate: new Date()
         }
         try{
           const newTask = await updateTaskRequest(task._id, completeTask)
@@ -47,7 +48,8 @@ export default function TaskDetailPage(){
     return (
         <>
         <h1>Your Task</h1>
-        { loading ? <p className="load-spin">LOADING</p>
+        <br />
+        { loading ? <p className="load-spin">&#10140;</p>
         :
         error ? <p>{error}</p> 
         :

@@ -1,7 +1,6 @@
 import { tasksIndexRequest } from '../../utilities/tasks-api';
 import { useEffect, useState } from 'react'
 import TasksList from '../../components/TasksList/TasksList';
-import { Link } from "react-router-dom";
 import TasksListComplete from '../../components/TasksList/TasksListComplete';
 
 export default function TasksIndexPage(){
@@ -19,22 +18,27 @@ export default function TasksIndexPage(){
         getTasks();
     }, [])
     
+    const handleClick = () => {
+        window.location.href = "/newtasks";
+      };
    
     return(
         <>
         <div className="container">
             <div className="row">
-                <div className='col-lg-4'>
-                    <Link to="/newtasks" className="create-style">
-                        <div className="bounce">  
-                            <h1>Add Tasks Here</h1>
-                        </div>
-                    </Link>
+                <div className="col-lg-4">
+                    <button 
+                        className="btn btn-info btn-styles" 
+                        onClick={handleClick}>
+                            Add A New Task
+                    </button>
                 <TasksList tasks={tasks}  ></TasksList>
         
                 </div>
-            <div className="col-lg-8">
-                <h1 className="index-style ">Get organized and stay productive with this task management app</h1>
+            <div className="col-lg-4">
+                <h2 className="text-shadow">
+                    Your Completed Tasks    
+                </h2>
                 <TasksListComplete tasks={tasks}></TasksListComplete>
             </div>
         

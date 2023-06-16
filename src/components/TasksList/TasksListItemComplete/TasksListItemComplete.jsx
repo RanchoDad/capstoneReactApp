@@ -1,16 +1,31 @@
-import FormatDate from '../../FormatDate/FormatDate';
+import FormatDate from '../../FormatDate/FormatDueDate';
 
 
 export default function TasksListItemComplete({ task, setTask  }) {
+  const timeDifference = () => {
+    const createDate = new Date(task.createDate);
+    const completeDate = new Date(task.completeDate);
+    const diff = Math.abs(createDate - completeDate);
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+    return `${days} Days ${hours} Hours ${minutes} Minutes`;
+  };
+  console.log(timeDifference())
 
   return (
     <div className="container">
       <div className="row">
-              <div className="card card-style offset-md-4">
+              <div className="card card-style complete-card">
                 {task && (
                 <div className="card-body">
                   <h4>{task.title}</h4>
-                  <p>Description: sss{task.description}</p>
+                  <p>Description: {task.description}</p>
+                    <p>
+                      Actual total time: {timeDifference()}
+                    </p>
                   <FormatDate tasks={[task]} />   
                   <p>Task is Complete!</p>            
                 </div>

@@ -127,26 +127,7 @@ button, a.button {
   outline: none;
   cursor: pointer;
 }
-/* 
-button.btn-sm {
-  font-size: 1.5vmin;
-  padding: .6vmin .8vmin;
-}
 
-button.btn-xs {
-  font-size: 1vmin;
-  padding: .4vmin .5vmin;
-}
-
-button:disabled, form:invalid button[type="submit"] {
-  cursor: not-allowed;
-  background-color: var(--tan-4);
-}
-
-button[type="submit"] {
-  grid-column: span 2;
-  margin: 1vmin 0 0;
-} */
 
 .nav-style {
   display: flex;
@@ -167,18 +148,6 @@ button[type="submit"] {
   text-decoration: underline;
   cursor: pointer;
   animation: bounce 0.5s ease;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 .text-left {
@@ -277,10 +246,6 @@ button[type="submit"] {
 
 .btn-style {
   display: inline-block;
-  /* animation: bounce 0.5s ease;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite; */
   background-color: #e8c4ce;
   border: none;
 }
@@ -304,12 +269,9 @@ button[type="submit"] {
 }
 .btn-styles {
   display: inline-block;
-  /* animation: bounce 0.7s ease;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite; */
   background-color: #4fb7d4;
   border: none;
+  font-weight: bold;
 
 }
 .load-spin {
@@ -328,4 +290,10 @@ button[type="submit"] {
 }
 .text-shadow{
   text-shadow: 4px 4px 2px rgba(165, 62, 205, 0.3);
+}
+
+.complete-card {
+  background-color: #aed9e0;
+  border: 1px solid;
+  box-shadow: -5px -5px 5px rgba(0, 0, 0, 0.3);
 }
