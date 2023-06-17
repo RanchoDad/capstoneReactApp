@@ -275,8 +275,10 @@ button, a.button {
 
 }
 .load-spin {
+  font-weight: bold;
+  font-size: larger;
   animation-name: spin;
-  animation-duration: 2000ms;
+  animation-duration: 500ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   

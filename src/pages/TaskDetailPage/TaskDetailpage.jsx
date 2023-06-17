@@ -49,7 +49,7 @@ export default function TaskDetailPage(){
         <>
         <h1>Your Task</h1>
         <br />
-        { loading ? <p className="load-spin">&#10140;</p>
+        { loading ? <p className="load-spin">X</p>
         :
         error ? <p>{error}</p> 
         :

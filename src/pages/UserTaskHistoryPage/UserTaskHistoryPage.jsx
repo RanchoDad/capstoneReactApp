@@ -33,7 +33,6 @@ export default function TasksIndexPage(){
                             Add A New Task
                     </button>
                 <TasksList tasks={tasks}  ></TasksList>
-        
                 </div>
             <div className="col-lg-4">
                 <h2 className="text-shadow">
@@ -43,7 +42,7 @@ export default function TasksIndexPage(){
             </div>
         
         </div>
-        </div>
-        </>
+    </div>
+    </>
     )
 }

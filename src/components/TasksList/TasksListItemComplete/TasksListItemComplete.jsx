@@ -1,4 +1,6 @@
 import FormatDate from '../../FormatDate/FormatDueDate';
+import ActualDifference from '../../TimeDifference/ActualDifference';
+import ProjectedDifference from '../../TimeDifference/ProjectedDifference';
 
 
 export default function TasksListItemComplete({ task, setTask  }) {
@@ -23,9 +25,10 @@ export default function TasksListItemComplete({ task, setTask  }) {
                 <div className="card-body">
                   <h4>{task.title}</h4>
                   <p>Description: {task.description}</p>
-                    <p>
-                      Actual total time: {timeDifference()}
-                    </p>
+                    <div>
+                      <ProjectedDifference tasks={[task]} />
+                      <ActualDifference tasks={[task]} />
+                    </div>
                   <FormatDate tasks={[task]} />   
                   <p>Task is Complete!</p>            
                 </div>
